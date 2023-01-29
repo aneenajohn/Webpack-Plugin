@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FavIconPlugin = require("./wp-tools/FavIconPlugin");
 
 module.exports = {
   entry: "./src/index.jsx",
@@ -8,6 +9,11 @@ module.exports = {
     filename: "bundle.js", // the name of the bundle
   },
   plugins: [
+    new FavIconPlugin({
+      alphabet: "ANE",
+      size: 64,
+      output: "favicon.png"
+    }),
     new HtmlWebpackPlugin({
       template: "src/index.html", // to import index.html file inside index.js
     }),

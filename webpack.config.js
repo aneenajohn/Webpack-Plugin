@@ -25,6 +25,10 @@ module.exports = {
         },
       },
       {
+        test: /\.jsx$/,
+        use: ["./wp-tools/customLoader"],
+      },
+      {
         test: /\.css$/, // styles files
         use: ["style-loader", "css-loader"],
       },

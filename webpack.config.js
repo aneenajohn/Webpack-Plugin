@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const FavIconPlugin = require("./wp-tools/FavIconPlugin");
 
 module.exports = {
   entry: "./src/index.jsx",
@@ -8,6 +7,11 @@ module.exports = {
     path: path.join(__dirname, "/dist"), // the bundle output path
     filename: "bundle.js", // the name of the bundle
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.html", // to import index.html file inside index.js
+    }),
+  ],
   devServer: {
     port: 3030, // you can change the port
   },
